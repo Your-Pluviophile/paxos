@@ -1,10 +1,3 @@
-/**
- * Message
- *
- * @author WJY
- * @date 2022-11-05
- * @description
- **/
 public class Message {
     // static type
     public static String prepareT = "prepare";

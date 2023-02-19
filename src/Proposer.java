@@ -3,16 +3,22 @@ import java.util.Vector;
 
 
 public class Proposer extends Thread {
+    //表示当前是第几个节点
     private final int id;
+    //proposal阶段的提案编号
     private int proposalNum;
+    //proposal阶段的提案值,默认从零开始
     private int proposalValue = 0;
-
+    //promise阶段的提案编号
     private int promiseNum;
+    //同意提案的节点数量
     private volatile int responseOK;
+    //已经回复的节点数量
     private volatile int responseCount;
     private Vector<Client> clients = new Vector<>();
 
     private final VoteUtil util;
+    //使用通知方式，优雅关闭线程
     private boolean ifEnd = false;
     public boolean ifOffline = false;
 
